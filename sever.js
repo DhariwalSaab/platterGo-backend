@@ -19,6 +19,7 @@ app.use(
 // step 3  routing
 app.use(routes);
 app.use("/uploads", express.static("uploads"));
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 mongoose
   .connect("mongodb+srv://aditiyadhariwal:adi@backend-rest.dqq9j.mongodb.net/")
