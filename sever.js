@@ -1,5 +1,6 @@
 // step 1 mongo connection
 const express = require("express");
+const path = require("path");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const cors = require("cors");
@@ -18,8 +19,9 @@ app.use(
 
 // step 3  routing
 app.use(routes);
+// app.use("/uploads", express.static("uploads"));
+// app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use("/uploads", express.static("uploads"));
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 mongoose
   .connect("mongodb+srv://aditiyadhariwal:adi@backend-rest.dqq9j.mongodb.net/")
